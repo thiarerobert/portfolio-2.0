@@ -1,11 +1,12 @@
 import React from 'react';
 import styles from "./Header.module.css";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 
 
 export default function Header(props) {
+    const navigate= useNavigate();
     const menuItems = [
-        { id: 1, title: "À propos", link: "/about" },
+        { id: 1, title: "À propos", link: "/" },
         { id: 2, title: "Parcours", link: "/parcours" },
         { id: 3, title: "Projets", link: "/projets" },
         { id: 4, title: "Blogs", link: "/blogs" },
@@ -13,9 +14,10 @@ export default function Header(props) {
       ];
     const [title, setTitle] = React.useState(props.title);
 
-    const handleContactsClick = (event, newTitle) => {
+    const handleContactsClick = (event, newTitle, newLink) => {
         event.preventDefault()
         setTitle(newTitle);
+        navigate(newLink);
       };
 
       
@@ -30,7 +32,7 @@ export default function Header(props) {
                     <ul className={styles.nav}>
                         {menuItems.map(item =>(
                             <li key={item.id}>
-                                <Link to={item.link}>{item.title}</Link>
+                                <Link to={item.link} onClick={(event) => handleContactsClick(event, item.title, item.link)}>{item.title}</Link>
                                 
                             </li>
                         ))}

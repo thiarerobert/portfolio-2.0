@@ -12,7 +12,7 @@ import { Route, Routes } from 'react-router-dom';
 
 function App() {
   const menuItems = [
-    { id: 1, title: "À propos", path: "/about", element: <About/>},
+    { id: 1, title: "À propos", path:"/", element: <About/>},
     { id: 2, title: "Parcours", path: "/parcours", element: <Parcours/>},
     { id: 3, title: "Projets", path: "/projets", element: <Projets/>},
     { id: 4, title: "Blogs", path: "/blogs", element: <Blogs/>},
