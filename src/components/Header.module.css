@@ -1,0 +1,19 @@
+.header{
+    display: flex;
+    color: #fff;
+    justify-content: space-between;
+}
+
+.nav{
+    background-color: #A9A9A9;
+    border-radius: 0px 0px 0px 15px;
+    padding: 1rem;
+    list-style-type: none;
+    display: flex;
+    gap: 2rem;
+    
+}
+.nav a {
+    text-decoration: none;
+    color: #fff;
+}
